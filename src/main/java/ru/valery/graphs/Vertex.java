@@ -3,6 +3,7 @@ package ru.valery.graphs;
 import java.util.Collection;
 
 public interface Vertex<T, W>{
+	String getId();
 	/**
 	 *
 	 * @return Объект в вершине графа
@@ -21,5 +22,10 @@ public interface Vertex<T, W>{
 	 */
 	void addEdge(Edge<T,W> edge);
 
-	void updateValue(T value);
+	/**
+	 * Обновляем значение вершины
+	 * @param value Новое значение
+	 * @return Возвращаем старое значение (значение до изменения)
+	 */
+	T updateValue(T value);
 }

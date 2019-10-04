@@ -3,7 +3,7 @@ package ru.valery.graphs;
 import ru.valery.graphs.misc.EdgeDirectional;
 
 /**
- * Ребро
+ * Интерфейс ребра
  */
 public interface Edge<T, W> {
 
@@ -22,14 +22,14 @@ public interface Edge<T, W> {
 	 * Направление графа
 	 *
 	 * @return Прямое, обратное, ненаправленный (
-	 * {@link EdgeDirectional.FORWARD},
-	 * {@link EdgeDirectional.REVERSE},
-	 * {@link EdgeDirectional.NON_DIRECTIONAL})
+	 * {@link EdgeDirectional#FORWARD},
+	 * {@link EdgeDirectional#REVERSE},
+	 * {@link EdgeDirectional#NON_DIRECTIONAL})
 	 */
 	EdgeDirectional getDirect();
 
 	/**
-	 * @return Возвращает вес ребра в указанном пользователем типе
+	 * @return Возвращает вес ребра (тип указывается пользователем)
 	 */
 	W getWeight();
 
