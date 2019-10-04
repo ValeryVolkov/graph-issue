@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
 public class VertexImpl<T, W> implements Vertex<T, W> {
 	private final Set<Edge<T, W>> edges = new CopyOnWriteArraySet<>();
 
-	private String id;
+	private final String id;
 
 	private T value;
 
