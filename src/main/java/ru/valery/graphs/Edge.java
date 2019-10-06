@@ -5,17 +5,17 @@ import ru.valery.graphs.misc.EdgeDirectional;
 /**
  * Интерфейс ребра
  */
-public interface Edge<T, W> {
+public interface Edge<T> {
 
 	/**
 	 * @return Первая вершина ребра
 	 */
-	Vertex<T, W> getFirst();
+	Vertex<T> getFirst();
 
 	/**
 	 * @return Последняя вершина ребра
 	 */
-	Vertex<T, W> getSecond();
+	Vertex<T> getSecond();
 
 
 	/**
@@ -31,6 +31,6 @@ public interface Edge<T, W> {
 	/**
 	 * @return Возвращает вес ребра (тип указывается пользователем)
 	 */
-	W getWeight();
+	double getWeight();
 
 }

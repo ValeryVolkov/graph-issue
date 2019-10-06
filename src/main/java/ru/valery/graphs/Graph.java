@@ -2,15 +2,15 @@ package ru.valery.graphs;
 
 import java.util.Collection;
 
-public interface Graph<T, W> extends Finder<T, W>{
+public interface Graph<T> extends Finder<T>{
 
 	/**
 	 * Добавить ребро
 	 *
 	 * @param edge Ребро графа
 	 */
-	void addEdge(final Edge<T, W> edge);
+	void addEdge(final Edge<T> edge);
 
 
-	Collection<Edge<T, W>> getAllEdges();
+	Collection<Edge<T>> getAllEdges();
 }

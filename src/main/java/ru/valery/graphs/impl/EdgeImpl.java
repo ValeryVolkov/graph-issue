@@ -6,21 +6,21 @@ import ru.valery.graphs.misc.EdgeDirectional;
 
 import java.util.Objects;
 
-public class EdgeImpl<T, W> implements Edge<T, W> {
-	private final Vertex<T, W> first;
-	private final Vertex<T, W> second;
+public class EdgeImpl<T> implements Edge<T> {
+	private final Vertex<T> first;
+	private final Vertex<T> second;
 	private final EdgeDirectional directional;
-	private final W weight;
+	private final double weight;
 
-	public EdgeImpl(final Vertex<T, W> first, final Vertex<T, W> second) {
-		this(first, second, null);
+	public EdgeImpl(final Vertex<T> first, final Vertex<T> second) {
+		this(first, second, Double.MAX_VALUE);
 	}
 
-	public EdgeImpl(final Vertex<T, W> first, final Vertex<T, W> second, final W weight) {
+	public EdgeImpl(final Vertex<T> first, final Vertex<T> second, final double weight) {
 		this(first, second, weight, EdgeDirectional.NON_DIRECTIONAL);
 	}
 
-	public EdgeImpl(final Vertex<T, W> first, final Vertex<T, W> second, final W weight, final EdgeDirectional directional) {
+	public EdgeImpl(final Vertex<T> first, final Vertex<T> second, final double weight, final EdgeDirectional directional) {
 		this.first = Objects.requireNonNull(first, "Невозможно создать ребро без первой вершины");
 		this.second = Objects.requireNonNull(second, "Невозможно создать ребро без второй вершины");
 		this.directional = Objects.requireNonNull(directional, "Не указана направленность ребра");
@@ -30,12 +30,12 @@ public class EdgeImpl<T, W> implements Edge<T, W> {
 	}
 
 	@Override
-	public Vertex<T, W> getFirst() {
+	public Vertex<T> getFirst() {
 		return first;
 	}
 
 	@Override
-	public Vertex<T, W> getSecond() {
+	public Vertex<T> getSecond() {
 		return second;
 	}
 
@@ -45,7 +45,7 @@ public class EdgeImpl<T, W> implements Edge<T, W> {
 	}
 
 	@Override
-	public W getWeight() {
+	public double getWeight() {
 		return weight;
 	}
 
@@ -58,7 +58,7 @@ public class EdgeImpl<T, W> implements Edge<T, W> {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
-		final EdgeImpl<?, ?> edge = (EdgeImpl<?, ?>) o;
+		final EdgeImpl<?> edge = (EdgeImpl<?>) o;
 		return first.equals(edge.first) &&
 				second.equals(edge.second) &&
 				directional == edge.directional;
